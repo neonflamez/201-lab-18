@@ -43,5 +43,38 @@ void displayInformation(Review* head){
         totalRating += temp->rating;
         temp = temp->next;
     }
-    
+
+    if(count > 0){
+        cout << "   > Average: " << totalRating / count << '\n';
+    }
+ 
 }
+
+void deleteList(Review*& head){
+    while(head != nullptr){
+        Review* temp = head;
+        head = head->next;
+        delete temp;
+    }
+}
+
+int main(){
+    Review* head = nullptr;
+    int choice;
+    char anotherReview;
+    float rating;
+    string comments;
+
+    cout << "Which linked list method should we use?\n";
+    cout << "   [1] New nodes are added at the head of the linked list\n";
+    cout << "   [2] New nodes are added at the tail of the linked list\n";
+    cout << "Choice: ";
+    cin >> choice;
+
+    
+
+
+}
+
+
+
