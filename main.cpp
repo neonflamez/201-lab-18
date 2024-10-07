@@ -71,8 +71,30 @@ int main(){
     cout << "Choice: ";
     cin >> choice;
 
-    
+    do{
+        cout << "Enter review rating 0-5 ";
+        cin >> rating;
+        cin.ignore();
 
+        cout << "Enter review comments: ";
+        getline(cin, comments);
+
+        if(choice == 1){
+            addHead(head, rating, comments);
+        }
+        else{
+            addTail(head, rating, comments);
+        }
+
+        cout << "Enter another review? Y/N: ";
+        cin >> anotherReview;
+    }
+    while(anotherReview == 'Y' || anotherReview == 'y');
+
+    displayInformation(head);
+    deleteList(head);
+
+    return 0;
 
 }
 
